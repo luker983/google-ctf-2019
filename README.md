@@ -1,5 +1,3 @@
 # Google CTF 2019
 
-## Beginner Quest
-
-## Challenges
+This is a repository to host my solutions to the 2019 Google CTF challenges.
