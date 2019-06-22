@@ -12,4 +12,10 @@ So are these "Cauliflowers" earthlings? Not at all the unrelatable bipeds you im
 
 ## Steps
 
+1. Mount `ntfs` filesystem with `mkdir -p /mnt/nfs && mount ./family.ntfs /mnt/nfs`
+2. Explore! Particularly in `Users/Family/Documents`
+3. `credentials.txt` gives a hint about images in extended attributes
+4. `getfattr -e hex -n user.FILE0 credentials.txt > credentials_extended_hex.out`
+5. `xxd -r -p credentials_extended_hex.out output.png`
+6. `xdg-open output.png`
 
