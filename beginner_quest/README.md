@@ -10,5 +10,6 @@ You'll go, since you have nowhere else to go. But you'll be careful. You well kn
 
 - [x] Enter Space-Time Coordinates
 - [x] Satellite 
-- [ ] Home Computer
+- [x] Home Computer
+- [ ] Government Agriculture Network
 - [ ] Work Computer
