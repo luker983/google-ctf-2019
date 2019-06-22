@@ -10,4 +10,8 @@ But not much Cauliflower here.  They must be very private creatures.  SarahH has
 
 ## Steps
 
-
+1. Make file containing all stack values from accumulator 1
+2. print out `xor` values to see pattern
+3. write program that will calculate 1000 palindromic primes
+4. write program to `xor` stack values and palindromic primes
+5. go to `link.txt` and view one of the profiles

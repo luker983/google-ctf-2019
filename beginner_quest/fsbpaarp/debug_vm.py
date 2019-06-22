@@ -15,7 +15,6 @@ class VM:
     self.instruction_pointer += 1
 
     fn = VM.OPERATIONS.get(cur_ins, None)
-    print(fn)
 
     if cur_ins[0] == '🖋':
       return
@@ -28,7 +27,6 @@ class VM:
   def add(self):
     a = self.stack.pop()
     b = self.stack.pop()
-    #print(a, '+', b)
     self.stack.append(a + b)
 
   def sub(self):
@@ -76,7 +74,6 @@ class VM:
     raise SystemExit()
 
   def print_top(self):
-    #print('---printing----')
     sys.stdout.write(chr(self.stack.pop()))
     sys.stdout.flush()
 

@@ -72,8 +72,7 @@ class VM:
     raise SystemExit()
 
   def print_top(self):
-    #sys.stdout.write(int(self.stack.pop()))
-    print(int(self.stack.pop()))
+    sys.stdout.write(chr(self.stack.pop()))
     sys.stdout.flush()
 
   def push(self):
