@@ -12,4 +12,6 @@ SarahH, who appears to be  a programmer with several clients, has left open a te
 
 ## Steps
 
-
+1. `nc readme.ctfcompetition.com 1337`
+2. This one was frustrating, lots of enumeration
+3. `makemime README.flag`, use base64 output to decode the flag
