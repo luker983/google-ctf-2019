@@ -22,3 +22,9 @@ You'll go, since you have nowhere else to go. But you'll be careful. You well kn
 ### STOP GAN Ending
 
 Congratulations, you have destroyed the system. With an undeserved sense of accomplishment and ill-gotten stash of cauliflower pictures. You fly off triumphant, if totally misguided. It soon becomes very apparent that the pictures were just like the sculptures back home of you when you were younger. A mere representation of what was. Upon circling back to the big blue planet, you wonder what would have happened if you took a different path, maybe that work computer would have brought you closer to the real thing. Ah well. Time to find some friends and companionship or maybe a new home, one way or another. You lift your tendril to the console - what now?
+
+### Drive to target Ending
+
+Well that was a waste. After arriving, You spent 6 hours in the presence of a Biped who wanted to tell you all these stories about "their grandchildren" and "cats" Neither of which you knew what it was, or why you should care. After sitting there and nodding (or in your case, wobbling back and forth) for what seemed like an eternity, the biped falls asleep. You surmise that it must be the regular circadian rhythm time of revolution for them and turn to leave. As you leave the planet, you wonder. Will you ever find the mysterious picture entity? Did the Bipeds rule down there (if so it looks like they're doing a bad job at it)? Did anyone ever detect your ship, your presence and your landing? Will you ever find a new home? True Love? All of these questions however belong to that of philosophers and Poets. Unsatisfied, but ultimately uninjured, you set out in to the vast emptiness of space, searching forevermore.
+
+Of course, you could always see what would have happened if you found different clues down there.

@@ -8,4 +8,6 @@ Like all inhabitants of this world, you spend an inordinate amount of time on th
 
 ## Steps
 
-1.
+1. 'https://drivetothetarget.web.ctfcompetition.com'
+2. Incrementally increase the coordinates and follow the 'getting closer' signals until coordinates are reached.
+3. Manually get it dialed in using the token to receive the flag
