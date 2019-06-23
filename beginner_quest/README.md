@@ -12,5 +12,7 @@ You'll go, since you have nowhere else to go. But you'll be careful. You well kn
 - [x] Satellite 
 - [x] Home Computer
 - [x] Work Computer
-- [ ] Government Agriculture Network
-- [ ] Work Computer
+- [x] Government Agriculture Network
+- [x] FriendSpaceBookPlusAllAccessRedPremium.com
+- [ ] Drive to the target 
+- [ ] STOP GAN
