@@ -12,5 +12,6 @@ You need to get in closer to save them - you beat on the window, but you need ac
 
 ## Steps
 
+1. Connect to `https://govagriculture.web.ctfcompetition.com/`
 1. Set up web server
 2. Use xss

