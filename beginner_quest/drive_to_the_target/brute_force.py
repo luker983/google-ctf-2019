@@ -1,28 +1,28 @@
 import requests
-import lxml.html
+from requests_html import HTMLSession
 
 URL = 'https://drivetothetarget.web.ctfcompetition.com'
-TOKEN = 'gAAAAABdDslkg6JZSbI_0VfLkHWd17NX18r4kBZqPSuyc67-PD7Ca6LOfup0WiL8OobEHrXbE1WeYZ4zEx282dpG630uhr9EtL-W7CiK9vQ8VKYsqZVxYCqPnw1QHbs8hWj4hXpvGzUW'
 
+TOKEN = None
 LAT = None
 LON = None
 
 #while True:
 #    get_coords()
 #    move()
+session = HTMLSession()
 
-#def get_coords()
+def get_coords():
+    r = session.get(url=URL)
+    inputs = r.html.find('input')
+    lat = inputs[0].attrs.get('value')
+    lon = inputs[1].attrs.get('value')
+    token = inputs[2].attrs.get('value')
+    return (lat, lon, token)
 
-PARAMS = {'lat': 0.0, 'lon': 0.0, 'token': TOKEN} 
-r = requests.get(url=URL, params=PARAMS)
+def move():
+    
+#PARAMS = {'lat': 0.0, 'lon': 0.0, 'token': TOKEN} 
+#r = session.get(url=URL, params=PARAMS)
 
-tree = lxml.html.parse(r.text)
-root = tree.getroot()
-for form in root.xpath('//form[@method="get"]'):
-    for field in form.getchildren():
-        if 'name' in field.keys():
-            print(field.get('name'))
-
-print(r.text)
-
-
+(LAT, LON, TOKEN) = get_coords()
