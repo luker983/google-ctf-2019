@@ -15,4 +15,10 @@ You'll go, since you have nowhere else to go. But you'll be careful. You well kn
 - [x] Government Agriculture Network
 - [x] FriendSpaceBookPlusAllAccessRedPremium.com
 - [ ] Drive to the target 
-- [ ] STOP GAN
+- [x] STOP GAN (END)
+
+## Endings
+
+### STOP GAN Ending
+
+Congratulations, you have destroyed the system. With an undeserved sense of accomplishment and ill-gotten stash of cauliflower pictures. You fly off triumphant, if totally misguided. It soon becomes very apparent that the pictures were just like the sculptures back home of you when you were younger. A mere representation of what was. Upon circling back to the big blue planet, you wonder what would have happened if you took a different path, maybe that work computer would have brought you closer to the real thing. Ah well. Time to find some friends and companionship or maybe a new home, one way or another. You lift your tendril to the console - what now?
