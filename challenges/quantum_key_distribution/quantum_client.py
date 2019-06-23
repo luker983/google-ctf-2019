@@ -51,11 +51,16 @@ print('Shared Key:', hex(int(binary_key, 2))[2:])
 eek = int(shared_hex_key, 16)
 sk = int(binary_key, 2)
 
-print('Encryption Key:', hex(eek ^ sk)) 
+ek = hex(eek ^ sk)
+print('Encryption Key:', ek) 
 
-print(key)    
-derive = '(echo "%s" > /tmp/plain.key; xxd -r -p /tmp/plain.key > /tmp/enc.key)'%(shared_hex_key)
+derive = '(echo "%s" > /tmp/plain.key; xxd -r -p /tmp/plain.key > /tmp/enc.key)'%(ek)
 subprocess.call(derive, shell=True, stdout=subprocess.PIPE)
 
 decrypt = '(echo "%s" | openssl enc -d -aes-256-cbc -pbkdf2 -md sha1 -base64 --pass file:/tmp/enc.key > /tmp/flag.txt)'%(FLAG)
 subprocess.call(decrypt, shell=True, stdout=subprocess.PIPE)
+
+with open('/tmp/flag.txt') as flag:
+    flag = flag.read()
+
+print('\n', flag)
