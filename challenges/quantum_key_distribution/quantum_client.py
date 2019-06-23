@@ -31,16 +31,12 @@ for x in range(LEN):
     data['qubits'].append(qubit)
     data['basis'].append(axis)
 
-#print(json.dumps(data, indent=4))
 
 r = requests.post(URL, json=data)
-#print(r.text)
 sat_response = r.json()
-print(json.dumps(sat_response, indent=4))
 
-#print(json.dumps(sat_response, indent=4))
 shared_hex_key = sat_response['announcement']
-print('Shared Hex Key:', shared_hex_key)
+print('Encoded Encryption Key:', shared_hex_key)
 
 result = []
 binary_key = ""
@@ -50,12 +46,16 @@ for x in range(LEN):
 
 
 binary_key = binary_key[:128]
-print(hex(int(binary_key, 2)))
+print('Shared Key:', hex(int(binary_key, 2))[2:])
 
+eek = int(shared_hex_key, 16)
+sk = int(binary_key, 2)
 
-#print(key)    
-#derive = '(echo "%s" > /tmp/plain.key; xxd -r -p /tmp/plain.key > /tmp/enc.key)'%(shared_hex_key)
-#subprocess.call(derive, shell=True, stdout=subprocess.PIPE)
+print('Encryption Key:', hex(eek ^ sk)) 
 
-#decrypt = '(echo "%s" | openssl enc -d -aes-256-cbc -pbkdf2 -md sha1 -base64 --pass file:/tmp/enc.key > /tmp/flag.txt)'%(FLAG)
-#subprocess.call(decrypt, shell=True, stdout=subprocess.PIPE)
+print(key)    
+derive = '(echo "%s" > /tmp/plain.key; xxd -r -p /tmp/plain.key > /tmp/enc.key)'%(shared_hex_key)
+subprocess.call(derive, shell=True, stdout=subprocess.PIPE)
+
+decrypt = '(echo "%s" | openssl enc -d -aes-256-cbc -pbkdf2 -md sha1 -base64 --pass file:/tmp/enc.key > /tmp/flag.txt)'%(FLAG)
+subprocess.call(decrypt, shell=True, stdout=subprocess.PIPE)
