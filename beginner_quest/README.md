@@ -14,8 +14,8 @@ You'll go, since you have nowhere else to go. But you'll be careful. You well kn
 - [x] Work Computer
 - [x] Government Agriculture Network
 - [x] FriendSpaceBookPlusAllAccessRedPremium.com
-- [ ] Drive to the target 
 - [x] STOP GAN (END)
+- [x] Drive to the target (END) 
 
 ## Endings
 
