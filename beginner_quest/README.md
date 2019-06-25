@@ -1,4 +1,8 @@
-# Beginner Quest
+# Beginner's Quest
+
+Because this was my first CTF, I spent most of my time in this section. Many of the problems posed a fun challenge and I ended up getting eight flags here and got two endings.
+
+![Quest Progress](images/quest_progress.png "Img")
 
 ## Prompt
 
