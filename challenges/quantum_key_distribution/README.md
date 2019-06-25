@@ -1,8 +1,14 @@
 # Quantum Key Distribution (Crypto)
 
-## Prompt
+![Quantum Key Distribution](images/qkd.png "Img")
 
-Generate a key using Quantum Key Distribution (QKD) algorithm and decrypt the flag.
+## Challenge
+
+We are simulating a Quantum satellite that can exchange keys using qubits implementing BB84. You must POST the qubits and basis of measurement to `/qkd/qubits` and decode our satellite response, you can then derive the shared key and decrypt the flag. Send 512 qubits and basis to generate enough key bits.
+
+## Files
+
+
 
 ## Steps
 
