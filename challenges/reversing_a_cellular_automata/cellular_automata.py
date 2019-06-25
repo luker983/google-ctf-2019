@@ -38,6 +38,5 @@ while True:
     print(s2)
     s1 = s2
    
-    break 
     if (s1 == s):
         break
