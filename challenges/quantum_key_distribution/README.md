@@ -1,5 +1,4 @@
-# Quantum Key Distribution - Satellite Key Exchange 
-### (Crypto)
+# Quantum Key Distribution - Satellite Key Exchange *(Crypto)*
 
 ![Quantum Key Distribution](images/qkd.png "Img")
 
