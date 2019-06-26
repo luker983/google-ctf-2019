@@ -1,20 +1,24 @@
 STATE = '66de3c1bf87fdfcf'
-#STATE = 'deadbeef'
+# STATE = 'deadbeef' # if using this state, change SIZE to 32
 FLAG = 'U2FsdGVkX1/andRK+WVfKqJILMVdx/69xjAzW4KUqsjr98GqzFR793lfNHrw1Blc8UZHWOBrRhtLx3SM38R1MpRegLTHgHzf0EAa3oUeWcQ='
 SIZE = 64
+COUNT = 80
 
 s = int(STATE, 16)
-s = format(s, '064b')
+s = format(s, '0%sb'%(str(SIZE)))
 
 print('GOAL:', s)
 
 s1 = s
-while True:
+
+i = 0
+while i < COUNT:
+    i += 1
     s2 = ""
-    for i in range(SIZE):
-        l = s1[(i - 1) % SIZE]
-        c = s1[i]
-        r = s1[(i + 1) % SIZE]
+    for j in range(SIZE):
+        l = s1[(j - 1) % SIZE]
+        c = s1[j]
+        r = s1[(j + 1) % SIZE]
         
         if l == '1' and c == '1' and r == '1':
             s2 += '0'
