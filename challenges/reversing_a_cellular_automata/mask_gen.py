@@ -22,6 +22,7 @@ for i in range(SIZE):
         if goal[(i + 1) % SIZE] == '1':
             x = str(hex(int(x, 16) + 1))[2:]
         
-        
+print('MASK:', end=" ")  
 for c in mask:
     print(c, end="")
+print()
