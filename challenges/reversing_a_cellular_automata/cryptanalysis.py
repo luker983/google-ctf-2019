@@ -1,16 +1,15 @@
-STATE = '66de3c1bf87fdfcf'
-FLAG = 'U2FsdGVkX1/andRK+WVfKqJILMVdx/69xjAzW4KUqsjr98GqzFR793lfNHrw1Blc8UZHWOBrRhtLx3SM38R1MpRegLTHgHzf0EAa3oUeWcQ='
-SIZE = 64
+STATE = '66de3c1bf87fdfcf' # goal state in hex
+SIZE = 64 # bit size of step
 
 s = int(STATE, 16)
 s = format(s, '064b')
-
 
 print('GOAL:', s)
 
 goal = s
 s1 = s
 
+# takes input bit as string and flips it
 def flip_bit(bit):
     if bit == '1':
         flip = '0' 
@@ -19,6 +18,7 @@ def flip_bit(bit):
 
     return flip
 
+# carefully construct test string to reduce keyspace using mask
 def form_string(base):
     s = ''
     tmp = ''
@@ -58,6 +58,7 @@ def form_string(base):
 
     return s
 
+# generate all hex strings from 0 to 2^29
 def gen_all_hex():
     i = 0
     while i < 2**29:
@@ -66,9 +67,8 @@ def gen_all_hex():
         yield s
         i += 1
 
+# iterate over every possible reverse step to see if it propogates to goal state
 for s in gen_all_hex():
-    #print(s)
-
     s2 = ""
     for i in range(SIZE):
         nbor = int(s[(i - 1) % SIZE] + s[i] + s[(i + 1) % SIZE], 2)
@@ -78,7 +78,5 @@ for s in gen_all_hex():
         else: 
             s2 += '1'
 
-    #print(s2)
-    
     if (s2 == goal):
         print(s)

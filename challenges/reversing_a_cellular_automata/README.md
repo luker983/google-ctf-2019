@@ -59,10 +59,19 @@ The rule 126 chart above shows that the only two ways to get a '0' value are all
 0110011011011110001111000001101111111000011111111101111111001111
 ```
 
-The previous left, center, and right values of the previous step for every '0' bit must be the same. There are also many adjacent '0's in the desired step, meaning all of those previous bits can be treated as one bit. For example, a normal 4 bit step of `0000` has a key space of 2<sup>4</sup>, but under rule 126 there are only two possible reverse steps: `1111` or `0000`.
+The left, center, and right values of the previous step for every '0' bit must be the same. There are also many adjacent '0's in the desired step given, meaning all of those previous bits can be treated as one bit. For example, a normal 4 bit step of `0000` has a key space of 2<sup>4</sup>, but under rule 126 there are only two possible reverse steps: `1111` or `0000`.
 
-Using this key space reduction technique, every substring that matches `10+1` can be reduced to a single variable bit. In our goal step, this reduces our key space to 2<sup>33</sup>! That's great, but it could be even better.
+Using this key space reduction technique, every substring that matches `10...1`  can be reduced to a single variable bit. This reduces the key space for the reversing the given step to 2<sup>33</sup>! That's great, but it could be even better.
 
+When there are two of these substrings (`10...1`) right next to each other, they can be further reduced to a single bit! `1011001` can be broken down into two of these substrings: `101` and `1001`. If `101` reversed is `111` and `1001` is `1111`, it would be impossible for the middle '1's to exist. So if `101` reversed is `111`, `1001` must have a reverse of `0000`. This only happens 4 times in the provided step, but that's enough to reduce the key space down to 2<sup>29</sup>.
+
+The reverse step can now be brute forced relatively quickly to get a list of all possible reverse steps and each of those reverse steps can be tried as a key to decrypt the flag. Only two of these reverse steps actually work:
+
+```
+
+```
+
+These keys can be used to follow the provided decryption instructions and get the flag!
 
 ## Resources
 

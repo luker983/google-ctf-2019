@@ -1,8 +1,7 @@
-STATE = '66de3c1bf87fdfcf'
+STATE = '66de3c1bf87fdfcf' # initial state in hex
 # STATE = 'deadbeef' # if using this state, change SIZE to 32
-FLAG = 'U2FsdGVkX1/andRK+WVfKqJILMVdx/69xjAzW4KUqsjr98GqzFR793lfNHrw1Blc8UZHWOBrRhtLx3SM38R1MpRegLTHgHzf0EAa3oUeWcQ='
-SIZE = 64
-COUNT = 80
+SIZE = 64 # bit size of step
+COUNT = 80 # number of iterations
 
 s = int(STATE, 16)
 s = format(s, '0%sb'%(str(SIZE)))
@@ -16,26 +15,12 @@ while i < COUNT:
     i += 1
     s2 = ""
     for j in range(SIZE):
-        l = s1[(j - 1) % SIZE]
-        c = s1[j]
-        r = s1[(j + 1) % SIZE]
-        
-        if l == '1' and c == '1' and r == '1':
+        nbor = int(s1[(j - 1) % SIZE] + s1[j] + s1[(j + 1) % SIZE], 2)
+    
+        if nbor == 7 or nbor == 0:
             s2 += '0'
-        elif l == '1' and c == '1' and r == '0':
+        else:
             s2 += '1'
-        elif l == '1' and c == '0' and r == '1':
-            s2 += '1'
-        elif l == '1' and c == '0' and r == '0':
-            s2 += '1'
-        elif l == '0' and c == '1' and r == '1':
-            s2 += '1'
-        elif l == '0' and c == '1' and r == '0':
-            s2 += '1'
-        elif l == '0' and c == '0' and r == '1':
-            s2 += '1'
-        else: 
-            s2 += '0'
 
     ########################################
     # print out steps using unicode blocks #
