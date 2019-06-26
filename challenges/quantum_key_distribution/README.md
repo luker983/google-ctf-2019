@@ -80,6 +80,10 @@ Even though this is a shared key, the response documentation uses the word 'enco
 
 After deducing the encoding scheme, I followed the provided decryption examples to finally retrieve the flag!
 
+```
+CTF{you_performed_a_quantum_key_exchange_with_a_satellite} 
+```
+
 ## Resources
 
 * [**The BB84 Protocol** by Creature Mann](https://www.youtube.com/watch?v=UVzRbU6y7Ks)

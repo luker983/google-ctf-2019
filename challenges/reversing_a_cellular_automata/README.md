@@ -39,6 +39,7 @@ U2FsdGVkX1/andRK+WVfKqJILMVdx/69xjAzW4KUqsjr98GqzFR793lfNHrw1Blc8UZHWOBrRhtLx3SM
 * `cryptanalysis.py`: Brute force steps to get every possible reverse step.
 * `reverse.txt`: List of all possible reverse steps.
 * `decrypt.py`: Decrypt the flag using every possible reverse step key.
+* `decrypt.out`: Output of `decrypt.py`, contains key and flag.
 * `flag.txt`: Solution to this challenge.
 
 ## Solution
@@ -65,13 +66,12 @@ Using this key space reduction technique, every substring that matches `10...1` 
 
 When there are two of these substrings (`10...1`) right next to each other, they can be further reduced to a single bit! `1011001` can be broken down into two of these substrings: `101` and `1001`. If `101` reversed is `111` and `1001` is `1111`, it would be impossible for the middle '1's to exist. So if `101` reversed is `111`, `1001` must have a reverse of `0000`. This only happens 4 times in the provided step, but that's enough to reduce the key space down to 2<sup>29</sup>.
 
-The reverse step can now be brute forced relatively quickly to get a list of all possible reverse steps and each of those reverse steps can be tried as a key to decrypt the flag. Only two of these reverse steps actually work:
+The reverse step can now be brute forced relatively quickly to get a list of all possible reverse steps and each of those reverse steps can be tried as a key to decrypt the flag. After a few seconds of decryption, the key and flag can be found!
 
 ```
-
+Key: 3c73e7f12fcd767
+Decrypted: CTF{reversing_cellular_automatas_can_be_done_bit_by_bit}
 ```
-
-These keys can be used to follow the provided decryption instructions and get the flag!
 
 ## Resources
 
