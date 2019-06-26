@@ -50,7 +50,7 @@ This key helps, but there are still lots of emojis like `🥇` and `✋` that ar
 🖋💠🏁🎌🔶🚩
 ```
 
-The 🖋 marks the beginning of an assembly-like label. The flags that follow are unique so that this spot can be jumped to in the future. `🏀` jumps to the label after `💰`. `hello_world` shows how jumps and labels can be used to pop and print everything off of the stack. 
+The `🖋` marks the beginning of an assembly-like label. The flags that follow are unique so that this spot can be jumped to in the future. `🏀` jumps to the label after `💰`. `hello_world` shows how jumps and labels can be used to pop and print everything off of the stack. 
 
  
 
