@@ -1,6 +1,6 @@
 # [Reverse Cellular Automata](https://cellularautomata.web.ctfcompetition.com/)
 
-![Reversing Cellular Automata(images/rca.png "Img")
+![Reversing Cellular Automata](images/rca.png "Img")
 
 ## Challenge
 
