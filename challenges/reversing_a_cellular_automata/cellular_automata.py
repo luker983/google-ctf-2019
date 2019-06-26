@@ -1,14 +1,12 @@
-#STATE = '66de3c1bf87fdfcf'
-STATE = 'deadbeef'
+STATE = '66de3c1bf87fdfcf'
+#STATE = 'deadbeef'
 FLAG = 'U2FsdGVkX1/andRK+WVfKqJILMVdx/69xjAzW4KUqsjr98GqzFR793lfNHrw1Blc8UZHWOBrRhtLx3SM38R1MpRegLTHgHzf0EAa3oUeWcQ='
-SIZE = 32
+SIZE = 64
 
 s = int(STATE, 16)
-s = format(s, '032b')
-
+s = format(s, '064b')
 
 print('GOAL:', s)
-
 
 s1 = s
 while True:
@@ -35,8 +33,22 @@ while True:
         else: 
             s2 += '0'
 
-    print(s2)
+    ########################################
+    # print out steps using unicode blocks #
+    for bit in s2:
+        if bit == '1':
+            print(u'\u2588', end="")
+        if bit == '0':
+            print(' ', end="")
+
+    print()
+    #######################################
+
+    #######################################
+    # print out steps with the bit string #
+    # print(s2)
+
     s1 = s2
    
     if (s1 == s):
-        break
+        print('Found reverse step!')
