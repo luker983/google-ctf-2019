@@ -18,7 +18,7 @@ POST your qubits in JSON format the following way:
     - real: The real part of the complex number (int or float).
     - imag: The imaginary part of the complex number (int or float).
 
-The satellite respondes:
+The satellite responds:
 
 * **basis**: List of '+' and 'x' used by the satellite.
 
@@ -42,7 +42,7 @@ U2FsdGVkX19OI2T2J9zJbjMrmI0YSTS+zJ7fnxu1YcGftgkeyVMMwa+NNMG6fGgjROM/hUvvUxUGhctU
 
 ## Files
 
-* `quantum_client.py`: A program that will negotiate a shared key with the satellite and decrypt the flag.
+* `quantum_client.py`: A program that negotiates a shared key with the satellite and decrypts the flag.
 * `satellite_source.py`: Provided portion of the satellite source code.
 * `flag.txt`: The solution to this challenge.
  
@@ -56,7 +56,7 @@ Generating random strings of '+' and 'x' is simple in Python, but translating th
 
 ![Qubit Table](images/qubit_table.png "Img")
 
-Now that the qubits can be generated and then posted to the satellite, the next problem was understanding the response. The first component is the list of bases used to derive the key and the second part is the encrypted encryption key. The satellite encrypts the flag encryption key with the newly negotiated key in order to secure the response. To derive the shared key, the satellite source code can be used to provide some insight into how the key is generated:
+Now that the qubits could be generated and then posted to the satellite, the next problem was understanding the response. The first component is the list of bases used to derive the key and the second part is the encrypted encryption key. The satellite encrypts the flag encryption key with the newly negotiated key in order to secure the response. To derive the shared key, the satellite source code can be used to provide some insight into how the key is generated:
 
 ```
 for bit, tx_base, rx_base in zip(measure, tx_bases, rx_bases):
@@ -70,7 +70,7 @@ The satellite takes each basis received and compares it with the basis it used t
 binary_key = binary_key[:len(current_app.config['ENCRYPTION_KEY'])*4]
 ```
 
-The key is also truncated to make sure it matches the length of the encryption key. Using the decryption example provided, this length is likely 128 bits. Now the shared key can be derived and I thought I would be able to decrypt the response and then decrypt the flag! But there is one important detail that the challenge information did not provide: the encryption scheme used to encrypt the flag's encryption key with my shared key.
+The key is also truncated to make sure it matches the length of the encryption key. Using the decryption example provided, this length is likely 128 bits. Now the shared key can be derived, used to decrypt the response, and then decrypt the flag! But there is one important detail that the challenge information did not provide: the encryption scheme used to encrypt the flag's encryption key with the shared key.
 
 The first idea that came to mind was the same encryption scheme used in the decrpytion example: AES-256 in CBC mode. I was having issues with OpenSSL version compatibility so I was worried that I might be on the right track but not know it because of OpenSSl errors. After trying many different things, I gave up on AES and re-read the challenge document very closely:
 
