@@ -1,4 +1,4 @@
-# Quantum Key Distribution - Satellite Key Exchange 
+# [Quantum Key Distribution - Satellite Key Exchange](https://cryptoqkd.web.ctfcompetition.com/) 
 
 ![Quantum Key Distribution](images/qkd.png "Img")
 
@@ -42,11 +42,13 @@ U2FsdGVkX19OI2T2J9zJbjMrmI0YSTS+zJ7fnxu1YcGftgkeyVMMwa+NNMG6fGgjROM/hUvvUxUGhctU
 
 ## Files
 
-## Steps
+* `quantum_client.py`: A program that will negotiate a shared key with the 'satellite' and decrypt the flag.
+* `flag.txt`: The solution to this challenge.
+ 
+## Solution
 
 1. Read code and format at `https://cryptoqkd.web.ctfcompetition.com/`
 2. Write program to send random qubits and bases to satellite
 3. Use response to compare bases and derive shared key
 4. Figure out how encryption key is encoded with our shared key
 5. It's xor
-
