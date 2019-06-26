@@ -36,7 +36,7 @@ for x in range(LEN):
 
 
 # send data to server and load response as JSON
-r = requests.post(URL, json=data, verify=False)
+r = requests.post(URL, json=data)
 sat_response = r.json()
 
 encoded_encryption_key = sat_response['announcement']
