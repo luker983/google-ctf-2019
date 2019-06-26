@@ -22,7 +22,7 @@ Running the program with `python3 vm.py program` starts to print out what looks 
 http://emoji-t0anaxn
 ```
 
-But it seems like it will take a long time to finish. Opening up the program is overwhelming at first, so let's jump to the `vm.py` file to figure out exactly what the emojis mean:
+But it seems like it will take a long time to finish. `program` is full of emojis, so let's jump to the `vm.py` file to figure out exactly what the emojis mean:
 
 ```
 '🍡': add,
@@ -43,6 +43,16 @@ But it seems like it will take a long time to finish. Opening up the program is 
 '⛰': jump_top,
 '⌛': exit
 ``` 
+
+This key helps, but there are still lots of emojis like `🥇` and `✋` that are not here. Those can be found by looking at the `load` function code. Another confusing set of emojis that may not be obvious are groupings that look like this:
+
+```
+🖋💠🏁🎌🔶🚩
+```
+
+The 🖋 marks the beginning of an assembly-like label. The flags that follow are unique so that this spot can be jumped to in the future. `🏀` jumps to the label after `💰`. `hello_world` shows how jumps and labels can be used to pop and print everything off of the stack. 
+
+ 
 
 1. Make file containing all stack values from accumulator 1
 2. print out `xor` values to see pattern
