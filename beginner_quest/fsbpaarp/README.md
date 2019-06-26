@@ -52,7 +52,7 @@ This key helps, but there are still lots of emojis like `🥇` and `✋` that ar
 
 The `🖋` marks the beginning of an assembly-like label. The flags that follow are unique so that this spot can be jumped to in the future. `🏀` jumps to the label after `💰`. `hello_world` shows how jumps and labels can be used to pop and print everything off of the stack. 
 
-Now that we understand how the code works, we can start reversing. It seems that a bunch of values are pushed on the stack, a complicated function is called that results in a print. This process happens three times and then the program exits. Because the stack values continue to grow, I'm led to believe that some computation is too taxing to print out the entire URL in a reasonable amount of time.
+Now that we understand how the code works, we can start reversing. It seems that a bunch of values are pushed on the stack, a complicated function is called, and then a character is printed. This process happens three times and then the program exits. Because the stack values continue to grow, I'm led to believe that some computation is too taxing to print out the entire URL in a reasonable amount of time.
 
 Another interesting thing is that the XOR operation (`🌓`) takes place before every print (`🎤`). Lucky for us, `vm.py` is Python so we should be able to figure out what values the program is XORing. `debug_vm.py` is a slightly modified version of `vm.py` that prints out the XOR values and the result:
 
@@ -93,8 +93,7 @@ Another palindromic prime! In fact, this happens to be the 99th palindromic prim
 65: 🚛 🥈 9️⃣ 9️⃣ ✋
 106: 🚛 🥈 7️⃣ 6️⃣ 5️⃣ ✋
 ```
-
-This value probably tells the program which palindromic prime to use! Now we can construct a list of all the stack values and a list of their corresponding palindromic primes, XOR them, and hopefully get a URL:
+This value probably tells the program which palindromic prime to use! The first stack started at palindromic prime 1, the second starts with 99, so the third probably starts with the 765th. Now we can construct a list of all the stack values and a list of their corresponding palindromic primes, XOR them, and hopefully get a URL:
 
 ```
 http://emoji-t0anaxnr3nacpt4na.web.ctfcompetition.com/humans_and_cauliflowers_network/
