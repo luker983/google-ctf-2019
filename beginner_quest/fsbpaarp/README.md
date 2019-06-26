@@ -52,10 +52,54 @@ This key helps, but there are still lots of emojis like `🥇` and `✋` that ar
 
 The `🖋` marks the beginning of an assembly-like label. The flags that follow are unique so that this spot can be jumped to in the future. `🏀` jumps to the label after `💰`. `hello_world` shows how jumps and labels can be used to pop and print everything off of the stack. 
 
- 
+Now that we understand how the code works, we can start reversing. It seems that a bunch of values are pushed on the stack, a complicated function is called that results in a print. This process happens three times and then the program exits. Because the stack values continue to grow, I'm led to believe that some computation is too taxing to print out the entire URL in a reasonable amount of time.
 
-1. Make file containing all stack values from accumulator 1
-2. print out `xor` values to see pattern
-3. write program that will calculate 1000 palindromic primes
-4. write program to `xor` stack values and palindromic primes
-5. go to `link.txt` and view one of the profiles
+Another interesting thing is that the XOR operation (`🌓`) takes place before every print (`🎤`). Lucky for us, `vm.py` is Python so we should be able to figure out what values the program is XORing. `debug_vm.py` is a slightly modified version of `vm.py` that prints out the XOR values and the result:
+
+```
+Running ....
+xor 2 106 = 104
+xor 3 119 = 116
+xor 5 113 = 116
+xor 7 119 = 112
+xor 11 49 = 58
+xor 101 74 = 47
+xor 131 172 = 47
+xor 151 242 = 101
+xor 181 216 = 109
+xor 191 208 = 111
+xor 313 339 = 106
+```
+
+A pattern starts to appear after only a few rounds. The second row is the list of values pushed onto the stack at the beginning of the program, but the first row is a little stranger. These appear to be palindromic primes! A search for these numbers makes it clear that this is correct. Let's get all of the stack values from the first set and XOR them with a list of palindromic primes to see what happens!
+
+```
+http://emoji-t0anaxnr3nacpt4na.web.ctfco
+```
+
+Progress! Maybe this is a complete URL? Nope. Adding the next set of stack values doesn't help either. The stack values are too big for the primes and result in values to large to be Ascii. Hmmm... Many of the other challenges have had URLs that contain `ctfcompetition`. If we know that the next letter is `m` and that corresponds to the next stack value, we can figure out the number needed to XOR it. 
+
+```
+m = 109
+next_stack_value = 93766
+m ^ 93766
+93739
+```
+
+Another palindromic prime! In fact, this happens to be the 99th palindromic prime. Taking a closer look at the end of each section of stack pushes reveals this mysterious accumulator 2 value:
+
+```
+42: 🚛 🥈 1️⃣ ✋
+65: 🚛 🥈 9️⃣ 9️⃣ ✋
+106: 🚛 🥈 7️⃣ 6️⃣ 5️⃣ ✋
+```
+
+This value probably tells the program which palindromic prime to use! Now we can construct a list of all the stack values and a list of their corresponding palindromic primes, XOR them, and hopefully get a URL:
+
+```
+http://emoji-t0anaxnr3nacpt4na.web.ctfcompetition.com/humans_and_cauliflowers_network/
+```
+
+It worked! I was a little worried when I first got to this section of the challenge that there would be even more work to do, but navigating to Amber's page reveals the flag.
+
+![Flag](images/flag.png "Img")

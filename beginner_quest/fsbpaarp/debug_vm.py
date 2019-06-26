@@ -74,8 +74,9 @@ class VM:
     raise SystemExit()
 
   def print_top(self):
-    sys.stdout.write(chr(self.stack.pop()))
-    sys.stdout.flush()
+    self.stack.pop() # DEBUG 
+    #sys.stdout.write(chr(self.stack.pop()))
+    #sys.stdout.flush()
 
   def push(self):
     if self.rom[self.instruction_pointer] == '🥇':
