@@ -41,8 +41,16 @@ U2FsdGVkX1/andRK+WVfKqJILMVdx/69xjAzW4KUqsjr98GqzFR793lfNHrw1Blc8UZHWOBrRhtLx3SM
 * `decrypt.py`: Decrypt the flag using every possible reverse step key.
 * `flag.txt`: Solution to this challenge.
 
-## Steps
+## Solution
 
-1. Go to `https://cellularautomata.web.ctfcompetition.com/`
-2. Construct cellular automata
-3. Keyspace is 2^64, but can be reduced to 2^29 because 0's are only produced by 111 or 000
+I started this challenge off by refreshing my cellular automata memory. Rule 126 was new to me, so I did some research to understand as much I could about this type of cellular automata as possible before writing any code. 
+
+![Rule 126](images/rule126.gif)
+
+I then wrote a program that would use rule 126 starting at the provided step to see if there was a loop and I could happen upon a reverse step. Unfortunately it was not that easy, but the output of the program looks cool.
+
+![Custom Rule 126](images/custom_automata.png "Img")
+
+## Resources
+
+[**Rule 126** WolframMathWorld](http://mathworld.wolfram.com/Rule126.html)
