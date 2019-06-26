@@ -47,8 +47,16 @@ U2FsdGVkX19OI2T2J9zJbjMrmI0YSTS+zJ7fnxu1YcGftgkeyVMMwa+NNMG6fGgjROM/hUvvUxUGhctU
  
 ## Solution
 
+I had never heard of the BB84 protocol before, so I started this challenge off by researching that particular Quantum Key Distribution techique. [This video](https://www.youtube.com/watch?v=UVzRbU6y7Ks) by *Creature Mann* was very helpful
+
 1. Read code and format at `https://cryptoqkd.web.ctfcompetition.com/`
 2. Write program to send random qubits and bases to satellite
 3. Use response to compare bases and derive shared key
 4. Figure out how encryption key is encoded with our shared key
 5. It's xor
+
+## Resources
+
+* [**The BB84 Protocol** by Creature Mann](https://www.youtube.com/watch?v=UVzRbU6y7Ks)
+* [**BB84** Wikipedia Page](https://en.wikipedia.org/wiki/BB84)
+* [**Quantum key distribution** Wikipedia Page](https://en.wikipedia.org/wiki/Quantum_key_distribution)
