@@ -47,9 +47,22 @@ I started this challenge off by refreshing my cellular automata memory. Rule 126
 
 ![Rule 126](images/rule126.gif)
 
-I then wrote a program that would use rule 126 starting at the provided step to see if there was a loop and I could happen upon a reverse step. Unfortunately it was not that easy, but the output of the program looks cool.
+I then wrote a program that would use rule 126 starting at the provided step to see if there was a loop that would allow me to happen upon a reverse step. Unfortunately it was not that easy, but the output of the program looks cool.
 
 ![Custom Rule 126](images/custom_automata.png "Img")
+
+After about ~100 iterations, the automata gets into an infinite loop of mostly zeros and I realize that I'm probably going to need to go down the brute force route. 64 bit steps means 2<sup>64</sup> keys, not tractable in a weekend. I looked into some other reversing techniques to no avail and finally settled on attempting to reduce the keyspace myself.
+
+The rule 126 chart above shows that the only two ways to get a '0' value are all '1's or all '0's. Depending on the step being reversed, this could help reduce the key space tremendously. Here is what the given step looks like in binary:
+
+```
+0110011011011110001111000001101111111000011111111101111111001111
+```
+
+The previous left, center, and right values of the previous step for every '0' bit must be the same. There are also many adjacent '0's in the desired step, meaning all of those previous bits can be treated as one bit. For example, a normal 4 bit step of `0000` has a key space of 2<sup>4</sup>, but under rule 126 there are only two possible reverse steps: `1111` or `0000`.
+
+Using this key space reduction technique, every substring that matches `10+1` can be reduced to a single variable bit. In our goal step, this reduces our key space to 2<sup>33</sup>! That's great, but it could be even better.
+
 
 ## Resources
 
