@@ -8,7 +8,41 @@ Having already spent some time trying to find a way to gain more intelligence...
 
 But not much Cauliflower here.  They must be very private creatures.  SarahH has left open some proprietary tools, surely running this will take you to them.  Decipher this language and move forth!
 
-## Steps
+## Files
+
+* `files.zip` provided zip file that contains `vm.py` and `program`
+* `vm.py` stack based virtual machine that takes emojis as input
+* `program` emoji program that seems to be trying to print out a URL
+
+## Solution
+
+Running the program with `python3 vm.py program` starts to print out what looks like a URL:
+
+```
+http://emoji-t0anaxn
+```
+
+But it seems like it will take a long time to finish. Opening up the program is overwhelming at first, so let's jump to the `vm.py` file to figure out exactly what the emojis mean:
+
+```
+'🍡': add,
+'🤡': clone,
+'📐': divide,
+'😲': if_zero,
+'😄': if_not_zero,
+'🏀': jump_to,
+'🚛': load,
+'📬': modulo,
+'⭐': multiply,
+'🍿': pop,
+'📤': pop_out,
+'🎤': print_top,
+'📥': push,
+'🔪': sub,
+'🌓': xor,
+'⛰': jump_top,
+'⌛': exit
+``` 
 
 1. Make file containing all stack values from accumulator 1
 2. print out `xor` values to see pattern
