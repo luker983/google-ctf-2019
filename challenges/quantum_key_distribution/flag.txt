@@ -1,1 +1,0 @@
-CTF{you_performed_a_quantum_key_exchange_with_a_satellite}

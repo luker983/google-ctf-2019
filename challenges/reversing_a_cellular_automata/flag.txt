@@ -1,1 +1,0 @@
-CTF{reversing_cellular_automatas_can_be_done_bit_by_bit}
