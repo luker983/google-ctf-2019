@@ -10,9 +10,17 @@ But not much Cauliflower here.  They must be very private creatures.  SarahH has
 
 ## Files
 
-* `files.zip` provided zip file that contains `vm.py` and `program`
-* `vm.py` stack based virtual machine that takes emojis as input
-* `program` emoji program that seems to be trying to print out a URL
+* `files.zip`: Provided zip file that contains `vm.py` and `program`.
+* `vm.py`: Stack based virtual machine that takes emojis as input.
+* `program`: Emoji program that seems to be trying to print out a URL.
+* `debug_vm.py`: A copy of `program` used for reverse engineering.
+* `debug.out`: Output of `debug_vm.py`.
+* `hello_world`: Hello world emoji program.
+* `stack.txt`: List of stack values.
+* `prime.txt`: List of palindromic primes.
+* `decode_xor.py`: Program to XOR stack and primes to get link.
+* `link.txt`: Reverse engineered URL.
+* `flag.txt`: Solution to this challenge.
 
 ## Solution
 
