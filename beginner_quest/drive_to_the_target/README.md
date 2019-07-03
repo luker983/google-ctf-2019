@@ -12,7 +12,7 @@ Like all inhabitants of this world, you spend an inordinate amount of time on th
 * `coords.txt`: Final coordinates.
 * `flag.txt`: Solution to this challenge.
 
-## Steps
+## Solution 
 
 Heading to https://drivetothetarget.web.ctfcompetition.com shows us this page:
 
