@@ -15,7 +15,7 @@ You need to get in closer to save them - you beat on the window, but you need ac
 * `xss.txt`: XSS exploit used to get flag.
 * `flag.txt`: solution to this challenge.
 
-## Steps
+## Solution 
 
 Heading to  `https://govagriculture.web.ctfcompetition.com/` shows us this lovely little site:
 
