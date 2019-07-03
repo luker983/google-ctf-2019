@@ -17,7 +17,7 @@ You need to get in closer to save them - you beat on the window, but you need ac
 
 ## Solution 
 
-Heading to  `https://govagriculture.web.ctfcompetition.com/` shows us this lovely little site:
+Heading to https://govagriculture.web.ctfcompetition.com/ shows us this lovely little site:
 
 ![Agriculture](images/agriculture.png "Img")
 
