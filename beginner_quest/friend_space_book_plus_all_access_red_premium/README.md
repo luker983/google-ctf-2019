@@ -79,7 +79,7 @@ xor 191 208 = 111
 xor 313 339 = 106
 ```
 
-A pattern starts to appear after only a few rounds. The second row is the list of values pushed onto the stack at the beginning of the program, but the first row is a little stranger. These appear to be palindromic primes! A search for these numbers makes it clear that this is correct. Let's get all of the stack values from the first set and XOR them with a list of palindromic primes to see what happens!
+A pattern starts to appear after only a few rounds. The second column is the list of values pushed onto the stack at the beginning of the program, but the first column is a little stranger. These appear to be palindromic primes! A search for these numbers makes it clear that this is correct. Let's get all of the stack values from the first set and XOR them with a list of palindromic primes to see what happens!
 
 ```
 http://emoji-t0anaxnr3nacpt4na.web.ctfco
